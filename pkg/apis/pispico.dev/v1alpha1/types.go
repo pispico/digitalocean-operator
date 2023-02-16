@@ -22,6 +22,9 @@ import (
 
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="ClusterID",type=string,JSONPath=`.status.klusterID`
+// +kubebuilder:printcolumn:name="Progress",type=string,JSONPath=`.status.progress`
 
 // Kluster is a specification for a Kluster resource
 type Kluster struct {
@@ -32,7 +35,7 @@ type Kluster struct {
 	Status KlusterStatus `json:"status,omitempty"`
 }
 
-// FooSpec is the spec for a Foo resource
+// KlusterSpec is the spec for a Kluster resource
 type KlusterSpec struct {
 	Name        string `json:"name,omitempty"`
 	Region      string `json:"region,omitempty"`
@@ -48,7 +51,7 @@ type NodePool struct {
 	Count int    `json:"count,omitempty"`
 }
 
-// FooStatus is the status for a Foo resource
+// KlusterStatus is the status for a Kluster resource
 type KlusterStatus struct {
 	KlusterID  string `json:"klusterID,omitempty"`
 	Progress   string `json:"progress,omitempty"`
@@ -57,7 +60,7 @@ type KlusterStatus struct {
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
-// FooList is a list of Foo resources
+// KlusterList is a list of Kluster resources
 type KlusterList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`

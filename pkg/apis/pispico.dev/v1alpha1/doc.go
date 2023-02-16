@@ -14,16 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package main
+// +k8s:deepcopy-gen=package
+// +groupName=pispico.dev
 
-import (
-	"fmt"
-
-	"github.com/pispico/digitalocean-operator/pkg/apis/pispico.dev/v1alpha1"
-)
-
-func main() {
-	teste := v1alpha1.Kluster{}
-	fmt.Println(teste)
-
-}
+// Package v1alpha1 is the v1alpha1 version of the API.
+package v1alpha1 // import "github.com/pispico/digitalocean-operator/pkg/apis/pispico.dev/v1alpha1"

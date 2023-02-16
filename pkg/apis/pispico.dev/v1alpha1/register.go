@@ -21,7 +21,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	digitaloceanoperator "github.com/pispico/digitalocean-operator/pkg/apis/digitaloceanoperator"
+	digitaloceanoperator "github.com/pispico/digitalocean-operator/pkg/apis/pispico.dev"
 )
 
 // SchemeGroupVersion is group version used to register these objects
